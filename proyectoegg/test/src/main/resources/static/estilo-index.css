@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+/* estilo index */
+
+.cuerpo {
+    background-image: url("/imagenes/v6.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.padre {
+    height: 1000px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hijo {
+    padding-top: 30%;
+    font-display: flex;
+}
+
+.boton {
+    border: 7px;
+    border-radius: 200px;
+    border-style: double;
+    background: black;
+    border-color: white;
+    color: white;
+    padding: 15px;
+    font-family: 'Space Mono', monospace;
+    object-position: top;
+}
+
+.boton:hover {
+    background: #290FBA;
+    color: white;
+    border-color: white;
+    opacity: .7;
+}
+
+.boton:active {
+    border-style: double;
+    background: black;
+    border-color: white;
+    color: white;
+}
+
+.boton a {
+    text-decoration: none;
+    color: white;
+}

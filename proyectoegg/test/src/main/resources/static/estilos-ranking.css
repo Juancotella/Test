@@ -1,0 +1,176 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+/* estilo puntuaciones altas */
+
+
+/* NAVEGADOR*/
+
+.nav {
+    background-image: url("/imagenes/nav-conlogochico.png");
+    background-repeat: no-repeat;
+    background-position: initial;
+    background-size: cover;
+    margin: 0;
+    height: 115px;
+    width: auto;
+    border-color: black;
+    /* box-shadow: 5px 5px 10px black; */
+    box-shadow: 2px 2px 5px #999;
+}
+
+li a {
+    color: white;
+    margin-top: 72px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a.nav-link {
+	
+    border-color: black;
+    background-image: linear-gradient(to left, #00b7da, #161569, #00b7da);
+    margin-top: 35px;
+    margin-bottom:70px;
+    
+    
+}
+
+a.dropdown-item {
+	
+    margin-top: 5px;
+    color: black;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bolder;
+    text-decoration: none;
+    text-align: right;
+    
+    
+}
+
+li.nav-item {
+	
+    
+    display: flex;
+    flex-direction: row;
+    width:250px;
+    justify-content: space-between;
+    margin-right:10%;
+   
+    
+   
+    
+}
+
+
+/* TABLE*/
+
+.tabla-container {
+    background-image: url("/imagenes/fondo-high.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 750px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    /* background-attachment: fixed; */
+}
+
+.tabla-scroll {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 500px;
+    width: 510px;
+    margin-right: 150px;
+    border-radius: 35px;
+    box-shadow: 5px 5px 10px black;
+    background-image: url("/imagenes/cuadro-pregunta.jpg");
+}
+
+.tabla {
+    padding: 14px;
+    border-radius: 15px;
+    height: auto;
+    width: 600px;
+    margin: auto;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+}
+
+::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+}
+
+ ::-webkit-scrollbar-button {
+    width: 68px;
+    height: 68px;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: #787878;
+    border: 78px none #ffffff;
+    border-radius: 86px;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #3384db;
+}
+
+ ::-webkit-scrollbar-thumb:active {
+    background: #62c3e6;
+}
+
+ ::-webkit-scrollbar-track {
+    background: #a7a9aa;
+    border: 6px none #e5dcdc;
+    border-radius: 67px;
+}
+
+ ::-webkit-scrollbar-track:hover {
+    background: #5283f4;
+}
+
+ ::-webkit-scrollbar-track:active {
+    background: #62c3e6;
+}
+
+ ::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+.tabla-thead {
+    height: 60px;
+    background-image: url("/imagenes/navbar-simple.jpg");
+    text-align: left;
+    box-shadow: 3px 3px 5px grey;
+    position: sticky;
+    top: 0%;
+    z-index: 10;
+    width: 35%;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight:900;
+    color:black;
+}
+
+.tabla tbody tr {
+    height: 50px;
+    padding-left: 25%;
+    text-align: left;
+}
+
+th {
+    padding: 0 10%;
+}
+
+td {
+	padding: 0 12%;
+	
+    
+}

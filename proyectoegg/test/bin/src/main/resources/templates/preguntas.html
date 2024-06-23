@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PREGUNTAS</title>
+    <link rel="stylesheet" href="/stylepreguntas.css">
+    <link rel="icon" type="image/png" href="/imagenes/img-highscore.png" sizes="30x30">
+    <!-- letra -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo&family=Lobster&family=Rampart+One&family=Space+Mono:ital,wght@0,400;1,700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div th:object="${usuario}" class="mini-box">
+        <p th:text="${usuario.alias}"></p>
+        <div th:if="${usuario.vidas == 3}" class="vidas-container">
+            <img class="vidas" src="/imagenes/vidas.png" alt="">
+            <img class="vidas" src="/imagenes/vidas.png" alt="">
+            <img class="vidas" src="/imagenes/vidas.png" alt="">
+        </div>
+        <div th:if="${usuario.vidas == 2}" class="vidas-container">
+            <img class="vidas" src="/imagenes/vidas.png" alt="">
+            <img class="vidas" src="/imagenes/vidas.png" alt="">
+        </div>
+        <div th:if="${usuario.vidas == 1}" class="vidas-container">
+            <img class="vidas" src="/imagenes/vidas.png" alt="">
+        </div>
+    </div>
+    <div th:object="${usuario}" class="mini-box-puntaje">
+        <p th:text="${usuario.puntaje}"></p>
+    </div>
+
+    <form th:action="@{/juego/pregunta}" th:object="${pregunta}" method="POST">
+        <div class="body-conteiner">
+            <div class="caja-conteiner">
+                <div class="botones-item">
+                
+                    <!--CORRECTO INCORRECTO
+                    <div class="conteiner-anashe">
+                     <div th:if="${correcto}" style="color: green"></div>
+                    <span th:text="${correcto}"></span>
+                    <div th:if="${incorrecto}" style="color: red"></div>
+                    <span th:text="${incorrecto}"></span> 
+                    </div>	--> 
+                    
+                    <p class="pregunta-item" th:text="${pregunta.enunciado}"></p>
+                    <label class="radio-inline"><input type="radio" th:text="${pregunta.respuesta1}" th:value="${pregunta.respuesta1}" name="respuestaElegida" checked></label>
+                	<label class="radio-inline"><br><input type="radio" th:text="${pregunta.respuesta2}" th:value="${pregunta.respuesta2}" name="respuestaElegida"></label>
+	                <label class="radio-inline"><br><input type="radio" th:text="${pregunta.respuesta3}" th:value="${pregunta.respuesta3}" name="respuestaElegida"></label>
+                	<label class="radio-inline"><br><input type="radio" th:text="${pregunta.respuesta4}" th:value="${pregunta.respuesta4}" name="respuestaElegida"></label>
+   					<input hidden th:value="${pregunta.id}" name="id">
+                                        
+                    <!-- RADIOS FUNCIONANDO!
+                    <input type="radio" th:text="${pregunta.respuesta1}" th:value="${pregunta.respuesta1}" name="respuestaElegida">
+                    <input type="radio" th:text="${pregunta.respuesta2}" th:value="${pregunta.respuesta2}" name="respuestaElegida">
+                    <input type="radio" th:text="${pregunta.respuesta3}" th:value="${pregunta.respuesta3}" name="respuestaElegida">
+                    <input type="radio" th:text="${pregunta.respuesta4}" th:value="${pregunta.respuesta4}" name="respuestaElegida">
+                    <input hidden th:value="${pregunta.id}" name="id">
+                    
+                    	BOTONES SIN FUNCIONAR :( 
+                    <button type=""><input hidden th:text="${pregunta.respuesta1}"
+                            name="respuestaElegida" /></button>
+                    <button type="submit"><input hidden th:text="${pregunta.respuesta2}"
+                            name="respuestaElegida" /></button>
+                    <button type="submit"><input hidden th:text="${pregunta.respuesta3}"
+                            name="respuestaElegida" /></button>
+                    <button type="submit"><input hidden th:text="${pregunta.respuesta4}"
+                            name="respuestaElegida" /></button> -->
+                </div>
+            </div>
+        </div>
+        <div class="botones-opciones">
+            <!--<button class="botones-op"><a th:href="@{/juego/terminado}">SALIR</a></button>
+            <button type="submit" class="botones-op">SIGUIENTE</a></button>-->
+            <a class="botones-op" th:href="@{/juego/terminado}">SALIR</a>
+            <button type="submit" class="botones-op">SIGUIENTE</button>
+        </div>
+    </form>
+</body>
+
+</html>

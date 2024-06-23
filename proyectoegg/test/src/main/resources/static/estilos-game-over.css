@@ -1,0 +1,161 @@
+
+*{
+  
+    padding: auto;
+    margin: auto;
+        
+}
+
+
+/* NAVEGADOR*/
+
+.nav {
+    background-image: url("/imagenes/nav-conlogochico.png");
+    background-repeat: no-repeat;
+    background-position: initial;
+    background-size: cover;
+    margin: 0;
+    height: 115px;
+    width: auto;
+    border-color: black;
+    /* box-shadow: 5px 5px 10px black; */
+    box-shadow: 2px 2px 5px #999;
+}
+
+li a {
+    color: white;
+    margin-top: 72px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a.nav-link {
+	
+    border-color: black;
+    background-image: linear-gradient(to left, #00b7da, #161569, #00b7da);
+    margin-top: 35px;
+    margin-bottom:70px;
+    
+    
+}
+
+a.dropdown-item {
+	
+    margin-top: 5px;
+    color: black;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bolder;
+    text-decoration: none;
+    text-align: right;
+    
+    
+}
+
+li.nav-item {
+	
+    
+    display: flex;
+    flex-direction: row;
+    width:250px;
+    justify-content: space-between;
+    margin-right:10%;
+   
+    
+   
+    
+}
+
+ /*-------------------------*/
+
+
+
+
+.main-gameover{
+
+    background-image: url("/imagenes/felicitaciones.png");
+    background-size: 100% 100% ;
+    height: 100%;
+    background-repeat: no-repeat;  
+    background-size: cover;   
+    background-position: center;
+    height: 680px;
+    
+
+}
+
+.tabla-gameover {
+
+    background-image: url("/imagenes/cuadro-pregunta.jpg");
+    border-radius: 15px;
+    display: grid;
+    font-family: 'space mono', monospace;
+    font-weight: bolder;
+    text-align: center;
+    margin-right: 140px;
+    margin-top: 200px;
+    height: 90px;
+    width: 20%;
+    float: right;
+    position: relative;
+    right: 25%;
+    top: 15%;
+    box-shadow: 5px 5px 10px black;
+
+}
+
+.tabla-opciones {
+
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    justify-content: space-between;
+    margin-top: 0px;
+    margin-left: -25%;
+    margin-right: 50%;  
+    margin-bottom: auto;
+    font-family: 'space mono', monospace;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 23px;
+    
+}
+
+
+
+.botones-opciones {
+
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    justify-content: space-between;
+    margin-top: 25px;
+    margin-left: -25%;
+    margin-right: 70%;  
+    
+}
+
+.botones-op {
+    width: 200px;
+    margin-bottom: 80px;
+    border: 2px solid black;
+    background: black;
+    color: white;
+    border-radius: 3px;
+    padding: 5px;
+    text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.botones-op:active{
+    background:  #94B3FD;;
+    color: black;
+    box-shadow: inset 0px 0.1em 0.6em white;
+    transform: translateY(0em);
+}
+
+.botones-op:hover{
+    box-shadow: 0px 0.1em 0.2em rgb(45 35 66 / 40%), 0px 0.4em 0.7em -0.1em rgb(45 35 66 / 30%), inset 0px -0.1em 0px black;
+    transform: translateY(-0.1em);
+
+}

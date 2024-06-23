@@ -1,0 +1,83 @@
+body {
+	background-image: url(/imagenes/fondo-preguntas2.png);
+	background-size: 100% 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+}
+
+.body-conteiner {
+	height: 600px;
+	margin-top: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.pregunta-item {
+	margin-top:20%;
+	text-align: center;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 25px;
+	font-weight: 600;
+	color: black;
+}
+
+/* NAVEGADOR*/
+.nav {
+	background-image: url("/imagenes/nav-conlogochico.png");
+	background-repeat: no-repeat;
+	background-position: initial;
+	background-size: cover;
+	margin: 0;
+	height: 115px;
+	width: auto;
+	border-color: black;
+	/* box-shadow: 5px 5px 10px black; */
+	box-shadow: 2px 2px 5px #999;
+}
+
+li a {
+    color: white;
+    margin-top: 72px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a.nav-link {
+	
+    border-color: black;
+    background-image: linear-gradient(to left, #00b7da, #161569, #00b7da);
+    margin-top: 35px;
+    margin-bottom:70px;
+    
+    
+}
+
+a.dropdown-item {
+	
+    margin-top: 5px;
+    color: black;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bolder;
+    text-decoration: none;
+    text-align: right;
+    
+    
+}
+
+li.nav-item {
+	
+    
+    display: flex;
+    flex-direction: row;
+    width:60px;
+    margin-right:10%;
+   
+   
+}
+
+.error{
+	font-weight: 700;
+	font-family: 'Ubuntu', sans-serif;
+}
