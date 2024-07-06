@@ -49,6 +49,10 @@ public class UsuarioServicio implements UserDetailsService {
 		}
 	}
 
+	/*
+	 * Validar nuevo usuario
+	 */
+
 	private void validar(String alias, String pw1, String pw2) throws ErrorServicio {
 		if (alias == null || alias.isEmpty() || alias.length() < 3)
 			throw new ErrorServicio("Alias inválido.");
@@ -69,7 +73,8 @@ public class UsuarioServicio implements UserDetailsService {
 	}
 
 	/*
-	 * Comprueba si el jugador rompió su record de puntaje y reinicia vidas y puntaje.
+	 * Comprueba si el jugador rompió su record de puntaje y reinicia vidas y
+	 * puntaje.
 	 */
 	@Transactional
 	public void reiniciarUsuario(Integer id, String alias) throws ErrorServicio {
@@ -87,7 +92,11 @@ public class UsuarioServicio implements UserDetailsService {
 			throw new ErrorServicio("No se encontró el usuario solicitado");
 		}
 	}
-	
+
+	/*
+	 * Guardar el puntaje maximo de cada usuario
+	 */
+
 	@Transactional
 	public void guardarPuntajeMaximo(Integer id, String alias) throws ErrorServicio {
 		Optional<Usuario> respuesta = usuarioRepositorio.findById(id);
@@ -101,7 +110,6 @@ public class UsuarioServicio implements UserDetailsService {
 			throw new ErrorServicio("No se encontró el usuario solicitado");
 		}
 	}
-
 
 	/*
 	 * Descuenta una vida al jugador.
@@ -157,11 +165,11 @@ public class UsuarioServicio implements UserDetailsService {
 			Usuario usuario = usuarioRepositorio.buscarPorAlias(alias);
 			List<GrantedAuthority> permisos = new ArrayList<>();
 			permisos.add(new SimpleGrantedAuthority("ROLE_" + usuario.getRol()));
-			
+
 			ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
 			HttpSession session = attr.getRequest().getSession(true);
 			session.setAttribute("usuariosession", usuario);
-			
+
 			User user = new User(usuario.getAlias(), usuario.getPassword(), permisos);
 			return user;
 		} catch (Exception e) {

@@ -31,10 +31,16 @@
         <div class="caja-conteiner">
             <p class="pregunta-item">ELIGE EL MODO DE JUEGO:</p>
             <div class="botones-item">
-                <button type="button"><a th:href="@{/juego/empezar}">RANDOM</a></button>
-                <button type="button"><a th:href="@{/juego/empezar}">WEB</a></button>
-                <button type="button"><a th:href="@{/juego/empezar}">JAVA</a></button>
-                <button type="button"><a th:href="@{/juego/empezar}">BASE DE DATOS</a></button>
+            
+				<form th:action="@{/juego}" method="post">
+                    <button type="submit" name="modoDeJuego" value="RANDOM">RANDOM</button>
+                    <button type="submit" name="modoDeJuego" value="WEB">WEB</button>
+                    <button type="submit" name="modoDeJuego" value="JAVA">JAVA</button>
+                    <button type="submit" name="modoDeJuego" value="BASE DE DATOS">BASE DE DATOS</button>
+                </form>
+
+            
+            
             </div>
         </div>
     </div>

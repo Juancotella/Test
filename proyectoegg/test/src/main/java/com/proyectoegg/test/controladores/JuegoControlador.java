@@ -33,7 +33,7 @@ public class JuegoControlador {
 	
 	@PreAuthorize("hasAnyRole('ROLE_USUARIO')")
 	@PostMapping("")
-	public String elegirModo(ModelMap modelo, @RequestParam String modoDeJuego) {
+	public String elegirModo(ModelMap modelo, @RequestParam("modoDeJuego") String modoDeJuego) {
 		usuarioServicio.elegirModoDeJuego(modoDeJuego);
 		return "categorias";
 	}
@@ -52,8 +52,7 @@ public class JuegoControlador {
 			modelo.addAttribute("usuario", usuarioServicio.mostrarActivo());
 			return "preguntas";
 		} catch (ErrorServicio e) {
-			// TODO revisar si es addAttribute o conviene usar put como en los videos de
-			// nahue
+			// TODO revisar si es addAttribute o conviene usar put como en los videos de nahue
 			modelo.addAttribute("error", e.getMessage());
 			return "redirect:/juego/terminado";
 		}

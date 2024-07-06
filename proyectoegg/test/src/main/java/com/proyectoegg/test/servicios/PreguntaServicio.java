@@ -22,13 +22,11 @@ public class PreguntaServicio {
 	@Autowired
 	private UsuarioServicio usuarioServicio;
 
-	
-	
 	@Transactional(readOnly = true)
 	private Pregunta elegirPregunta() throws ErrorServicio {
 		List<Pregunta> preguntas;
 		Usuario usuario = usuarioServicio.mostrarActivo();
-		//TODO sacar el check de null.
+		// TODO sacar el check de null.
 		if (usuario.getModoDeJuego() == null)
 			preguntas = preguntaRepositorio.preguntasDisponibles();
 		else if (usuario.getModoDeJuego().equals("WEB"))
