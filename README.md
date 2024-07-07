@@ -13,7 +13,6 @@ Bienvenido al Test Project! 🎉
 
 
 🚀 Instalación
-Sigue estos pasos para poner en marcha el proyecto:
 
 - Clona el repositorio:
 git clone https://github.com/Juancotella/Test.git
