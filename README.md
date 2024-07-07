@@ -26,7 +26,7 @@ mvn spring-boot:run
 
 🤝 Contribuciones
 
-¡Las contribuciones son bienvenidas! Sigue estos pasos para contribuir:
+¡Las contribuciones son bienvenidas!
 
 📬 Contacto
 
