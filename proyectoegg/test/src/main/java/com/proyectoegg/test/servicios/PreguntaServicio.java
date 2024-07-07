@@ -45,6 +45,10 @@ public class PreguntaServicio {
 		return preguntas.get(0);
 	}
 
+	
+	/*
+	 * Mostar pregunta
+	 */
 	@Transactional
 	public Pregunta mostrarPregunta() throws ErrorServicio {
 		Pregunta pregunta = elegirPregunta();
@@ -56,6 +60,7 @@ public class PreguntaServicio {
 		return respuestaCorrecta.equals(respuestaElegida);
 	}
 
+	
 	@Transactional
 	public void reiniciarPreguntas() {
 		List<Pregunta> preguntas = preguntaRepositorio.findAll();
