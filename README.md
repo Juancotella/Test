@@ -1,7 +1,7 @@
 🚀 Test Project
 Bienvenido al Test Project! 🎉
 
- Este proyecto es una aplicación desarrollada con Java y Spring Boot que utilizada como proyecto final de un curso de desarrollo web full-stack.
+ Este proyecto es una aplicación desarrollada con Java y Spring Boot que fue utilizada como proyecto final de un curso de desarrollo web full-stack.
 
 
 🌟 Características:
