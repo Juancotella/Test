@@ -15,6 +15,11 @@
 </head>
 
 <body>
+
+
+	<!--Linea 51 de JuegoContrlador
+	Se trae el usuario desde el contrlador y a partir de ahi se empieza a usar para el mini box de la izquierda -> th:object="${usuario}"
+	--> 
 	<div th:object="${usuario}" class="mini-box">
 		<p th:text="${usuario.alias}"></p>
 		<div th:if="${usuario.vidas == 3}" class="vidas-container">
@@ -34,22 +39,30 @@
 		<p th:text="${usuario.puntaje}"></p>
 	</div>
 
+
+	<!--Linea 52 de JuegoContrlador
+	Se trae la pregunta desde el contrlador y a partir de ahi se empieza a usar	 -> th:object="${pregunta}"
+	--> 
 	<form th:action="@{/juego/pregunta}" th:object="${pregunta}" method="POST">
 		<div class="body-container">
 			<div class="caja-container">
 				<div class="botones-item">
 					<p class="pregunta-item" th:text="${pregunta.enunciado}"></p>
 					<label class="radio-inline">
-						<input type="radio" th:value="${pregunta.respuesta1}" name="respuestaElegida" checked> <span th:text="${pregunta.respuesta1}"></span>
+						<input type="radio" th:value="${pregunta.respuesta1}" 
+						 name="respuestaElegida" checked> <span th:text="${pregunta.respuesta1}"></span>
 					</label>
 					<label class="radio-inline">
-						<input type="radio" th:value="${pregunta.respuesta2}" name="respuestaElegida"> <span th:text="${pregunta.respuesta2}"></span>
+						<input type="radio" th:value="${pregunta.respuesta2}"
+						 name="respuestaElegida"> <span th:text="${pregunta.respuesta2}"></span>
 					</label>
 					<label class="radio-inline">
-						<input type="radio" th:value="${pregunta.respuesta3}" name="respuestaElegida"> <span th:text="${pregunta.respuesta3}"></span>
+						<input type="radio" th:value="${pregunta.respuesta3}" 
+						 name="respuestaElegida"> <span th:text="${pregunta.respuesta3}"></span>
 					</label>
 					<label class="radio-inline">
-						<input type="radio" th:value="${pregunta.respuesta4}" name="respuestaElegida"> <span th:text="${pregunta.respuesta4}"></span>
+						<input type="radio" th:value="${pregunta.respuesta4}" 
+						 name="respuestaElegida"> <span th:text="${pregunta.respuesta4}"></span>
 					</label>
 					<input type="hidden" th:value="${pregunta.id}" name="id">
 				</div>

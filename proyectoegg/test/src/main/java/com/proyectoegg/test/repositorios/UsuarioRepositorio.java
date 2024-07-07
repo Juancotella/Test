@@ -18,6 +18,8 @@ public interface UsuarioRepositorio extends JpaRepository<Usuario, Integer> {
 	@Query("SELECT u FROM Usuario u ORDER BY u.puntajeMaximo DESC")
 	public List<Usuario> mostrarRanking();
 	
+	
+	//Modificar para que traiga el usuario de acuerdo al alias y no al ultimo creado
 	@Query("SELECT u FROM Usuario u WHERE u.id = (SELECT MAX(u.id) FROM Usuario u)")
 	public Usuario mostrarActivo();
 

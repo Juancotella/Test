@@ -25,6 +25,8 @@ public class JuegoControlador {
 	@Autowired
 	private PreguntaServicio preguntaServicio;
 
+	
+	
 	@PreAuthorize("hasAnyRole('ROLE_USUARIO')")
 	@GetMapping
 	public String categorias() {
@@ -40,15 +42,15 @@ public class JuegoControlador {
 
 	/*
 	 * Muesta la primer pregunta
+	 * Mostrar activo -> traer jugador
 	 */
 	@GetMapping("/empezar")
 	public String primerPregunta(ModelMap modelo) {
 	    try {
 	        Usuario u = usuarioServicio.mostrarActivo();
-	        System.out.println("Usuario activo: " + u);
 	        usuarioServicio.reiniciarUsuario(u.getId(), u.getAlias());
 	        preguntaServicio.reiniciarPreguntas();
-	        modelo.put("pregunta", preguntaServicio.mostrarPregunta());
+	        modelo.put("pregunta", preguntaServicio.mostrarPregunta());//Pregunta que le aparece al jugador y se setea como usada
 	        modelo.put("usuario", usuarioServicio.mostrarActivo());
 	        return "preguntas";
 	    } catch (ErrorServicio e) {
