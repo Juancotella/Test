@@ -26,8 +26,10 @@ mvn spring-boot:run
 
 
 🤝 Contribuciones
+
 ¡Las contribuciones son bienvenidas! Sigue estos pasos para contribuir:
 
 📬 Contacto
+
 Para cualquier duda o sugerencia, puedes contactarme a través de jcotellabogado@gmail.com
 Contento de recibir nuevas propuestas o funcionalidades 
