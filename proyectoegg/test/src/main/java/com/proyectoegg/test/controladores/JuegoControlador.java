@@ -31,33 +31,51 @@ public class JuegoControlador {
 		return "categorias";
 	}
 	
+//	@PreAuthorize("hasAnyRole('ROLE_USUARIO')")
+//	@PostMapping("")
+//	public String elegirModo(ModelMap modelo, @RequestParam("modoDeJuego") String modoDeJuego) {
+//		usuarioServicio.elegirModoDeJuego(modoDeJuego);
+//		return "redirect:/juego/empezar";
+//	}
+	
 	@PreAuthorize("hasAnyRole('ROLE_USUARIO')")
 	@PostMapping("")
-	public String elegirModo(ModelMap modelo, @RequestParam("modoDeJuego") String modoDeJuego) {
-		usuarioServicio.elegirModoDeJuego(modoDeJuego);
-		return "categorias";
+	public String elegirModo(ModelMap modelo, @RequestParam("modoDeJuego") String modoDeJuego) throws ErrorServicio {
+	    usuarioServicio.elegirModoDeJuego(modoDeJuego);
+	    System.out.println("");
+	    System.out.println("");
+	    System.out.println("");
+	    System.out.println("Modo de juego seleccionado: " + modoDeJuego);
+	    System.out.println("");
+	    System.out.println("");
+		return "redirect:/juego/empezar";
 	}
 
-	/*
-	 * Reinicia al jugador y a las preguntas y comienza el juego.
-	 */
-	@PreAuthorize("hasAnyRole('ROLE_USUARIO')")
+	
+	
+	
+	
+
+	//Opcion copilot - okey
+	
 	@GetMapping("/empezar")
 	public String primerPregunta(ModelMap modelo) {
-		try {
-			Usuario u = usuarioServicio.mostrarActivo();
-			usuarioServicio.reiniciarUsuario(u.getId(), u.getAlias());
-			preguntaServicio.reiniciarPreguntas();
-			modelo.addAttribute("pregunta", preguntaServicio.mostrarPregunta());
-			modelo.addAttribute("usuario", usuarioServicio.mostrarActivo());
-			return "preguntas";
-		} catch (ErrorServicio e) {
-			// TODO revisar si es addAttribute o conviene usar put como en los videos de nahue
-			modelo.addAttribute("error", e.getMessage());
-			return "redirect:/juego/terminado";
-		}
+	    try {
+	        Usuario u = usuarioServicio.mostrarActivo();
+	        System.out.println("Usuario activo: " + u);
+	        usuarioServicio.reiniciarUsuario(u.getId(), u.getAlias());
+	        preguntaServicio.reiniciarPreguntas();
+	        modelo.put("pregunta", preguntaServicio.mostrarPregunta());
+	        modelo.put("usuario", usuarioServicio.mostrarActivo());
+	        return "preguntas";
+	    } catch (ErrorServicio e) {
+	        System.out.println("Error: " + e.getMessage());
+	        modelo.put("error", e.getMessage());
+	        return "redirect:/juego/terminado";
+	    }
 	}
-
+	
+	
 	/*
 	 * Muestra la siguiente pregunta.
 	 */
@@ -69,6 +87,7 @@ public class JuegoControlador {
 			modelo.addAttribute("usuario", usuarioServicio.mostrarActivo());
 			return "preguntas";
 		} catch (ErrorServicio e) {
+			System.out.println("Error en el metodo mostrar Pregunta");
 			modelo.addAttribute("error", e.getMessage());
 			return "redirect:/juego/terminado";
 		}
@@ -77,26 +96,72 @@ public class JuegoControlador {
 	/*
 	 * Comprueba si la respuesta del jugador es correcta o incorrecta.
 	 */
+//	@PreAuthorize("hasAnyRole('ROLE_USUARIO')")
+//	@PostMapping("/pregunta")
+//	public String validarRespuesta(RedirectAttributes r, ModelMap modelo, @RequestParam Integer id,
+//			@RequestParam String respuestaElegida) throws ErrorServicio {
+//		Usuario u = usuarioServicio.mostrarActivo();
+//		Pregunta pregunta = preguntaServicio.findById(id);
+//		System.out.println("correcta:----------->" + id);
+//		System.out.println("seleccionada:----------->" + respuestaElegida);
+//		System.out.println("Error en el metodo validarRespuesta");
+//		if (pregunta.getRespuestaCorrecta().equals(respuestaElegida)) {
+//			r.addFlashAttribute("correcto", "Respuesta Correcta!");
+//			usuarioServicio.sumaPunto(u.getId(), u.getAlias());
+//		} else if (!pregunta.getRespuestaCorrecta().equals(respuestaElegida) && u.getVidas() == 1) {
+//			usuarioServicio.pierdeVida(u.getId(), u.getAlias());
+//			return "redirect:/juego/terminado";
+//		} else {
+//			r.addFlashAttribute("incorrecto", "Respuesta Incorrecta!");
+//			usuarioServicio.pierdeVida(u.getId(), u.getAlias());
+//		}
+//		return "redirect:/juego/pregunta";
+//	}
+	
+	//Copilot option
 	@PreAuthorize("hasAnyRole('ROLE_USUARIO')")
 	@PostMapping("/pregunta")
 	public String validarRespuesta(RedirectAttributes r, ModelMap modelo, @RequestParam Integer id,
-			@RequestParam String respuestaElegida) throws ErrorServicio {
-		Usuario u = usuarioServicio.mostrarActivo();
-		Pregunta pregunta = preguntaServicio.findById(id);
-		System.out.println("correcta:----------->" + id);
-		System.out.println("seleccionada:----------->" + respuestaElegida);
-		if (pregunta.getRespuestaCorrecta().equals(respuestaElegida)) {
-			r.addFlashAttribute("correcto", "Respuesta Correcta!");
-			usuarioServicio.sumaPunto(u.getId(), u.getAlias());
-		} else if (!pregunta.getRespuestaCorrecta().equals(respuestaElegida) && u.getVidas() == 1) {
-			usuarioServicio.pierdeVida(u.getId(), u.getAlias());
-			return "redirect:/juego/terminado";
-		} else {
-			r.addFlashAttribute("incorrecto", "Respuesta Incorrecta!");
-			usuarioServicio.pierdeVida(u.getId(), u.getAlias());
-		}
-		return "redirect:/juego/pregunta";
+	        @RequestParam String respuestaElegida) throws ErrorServicio {
+	    try {
+	        Usuario u = usuarioServicio.mostrarActivo();
+	        Pregunta pregunta = preguntaServicio.findById(id);
+	        System.out.println("Pregunta ID: " + id);
+	        System.out.println("Respuesta seleccionada: " + respuestaElegida);
+	        System.out.println("Respuesta correcta: " + pregunta.getRespuestaCorrecta());
+
+	        if (pregunta.getRespuestaCorrecta().equals(respuestaElegida)) {
+	            r.addFlashAttribute("correcto", "¡Respuesta Correcta!");
+	            usuarioServicio.sumaPunto(u.getId(), u.getAlias());
+	        } else {
+	            if (u.getVidas() == 1) {
+	                usuarioServicio.pierdeVida(u.getId(), u.getAlias());
+	                return "redirect:/juego/terminado";
+	            } else {
+	                r.addFlashAttribute("incorrecto", "¡Respuesta Incorrecta!");
+	                usuarioServicio.pierdeVida(u.getId(), u.getAlias());
+	            }
+	        }
+	        return "redirect:/juego/pregunta";
+	    } catch (ErrorServicio e) {
+	        System.out.println("Error en el método validarRespuesta: " + e.getMessage());
+	        modelo.put("error", e.getMessage());
+	        
+		    System.out.println("");
+		    System.out.println("");
+		    System.out.println("");
+		    System.out.println("El problema esta en el metodo validar respuesta");
+		    System.out.println("");
+		    System.out.println("");
+		    System.out.println("");
+		    System.out.println("");
+	        
+	        return "redirect:/juego/terminado";
+	    }
 	}
+	
+	
+	
 
 	/*
 	 * Muestra la vista del juego terminado y el puntaje del jugador.

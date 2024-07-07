@@ -70,6 +70,11 @@ public class UsuarioServicio implements UserDetailsService {
 		Usuario usuario = mostrarActivo();
 		usuario.setModoDeJuego(modoDeJuego);
 		usuarioRepositorio.save(usuario);
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("La categoria guardada en la base de datos es: " + usuario.getModoDeJuego());
+		System.out.println("");System.out.println("");System.out.println("");
 	}
 
 	/*
