@@ -11,7 +11,6 @@ html {
 body {
 
     background-image: url(/imagenes/fondo-login1.png);
-    /*background-size: 1100px 720px;*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -29,7 +28,6 @@ body {
     height: 115px;
     width: 101.5%;
     border-color: black;
-    /* box-shadow: 5px 5px 10px black; */
     box-shadow: 2px 2px 5px #999;
 }
 
@@ -64,14 +62,13 @@ li.nav-item {
 
 
 
-/*FORMULARIO LOGIN CLASE PADRE*/
+/*Formulario login*/
 div.formulario {
     width: 60%;
     height: 200px;
     margin-top:10px;
 }
 
-/*FORMULARIO LOGIN*/
 div.for {
    display: flex;
     flex-direction: row;
@@ -109,21 +106,21 @@ div.objetivo2 p {
 }
 
 
-/*PIE DE PÁGINA*/
+/*Pie de pagina*/
 .footer {
     display: flex;
     background-color: black;
     height: 100px;
     width: 101.5%;
     float: left;
-    /*background-attachment: fixed;*/
     position: absolute;
     bottom: 0;
     box-sizing: border-box;
     min-width: 300px;
     min-height: 50px;
 }
-/*CONTACTO*/
+
+/*Contacto*/
 .fo1 {
 
     width: 100%;

@@ -89,8 +89,8 @@ body {
 
 .mini-box {
     position: absolute;
-    top: 20px; /* Ajusta según sea necesario */
-    left: 20px; /* Ajusta según sea necesario */
+    top: 20px; 
+    left: 20px;
     width: 200px;
     height: 100px;
     border-radius: 5px;
@@ -111,15 +111,15 @@ body {
 }
 
 .vidas {
-    height: 20px; /* Ajusta la altura según sea necesario */
-    width: auto; /* Mantiene la proporción de aspecto */
-    margin: 0 2px; /* Añade un pequeño espacio entre las imágenes */
+    height: 20px; 
+    width: auto; 
+    margin: 0 2px; 
 }
 
 .mini-box-puntaje {
     position: absolute;
-    top: 20px; /* Ajusta según sea necesario */
-    right: 20px; /* Ajusta según sea necesario */
+    top: 20px; 
+    right: 20px; 
     width: 200px;
     height: 100px;
     border-radius: 5px;

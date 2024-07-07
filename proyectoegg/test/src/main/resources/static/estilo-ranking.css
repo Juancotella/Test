@@ -4,11 +4,6 @@
 }
 
 
-/* estilo puntuaciones altas */
-
-
-/* NAVEGADOR*/
-
 .nav {
     background-image: url("/imagenes/nav-conlogochico.png");
     background-repeat: no-repeat;
@@ -18,7 +13,6 @@
     height: 115px;
     width: auto;
     border-color: black;
-    /* box-shadow: 5px 5px 10px black; */
     box-shadow: 2px 2px 5px #999;
 }
 
@@ -41,29 +35,20 @@ a.nav-link {
 }
 
 a.dropdown-item {
-	
     margin-top: 5px;
     color: black;
     font-family: 'Ubuntu', sans-serif;
     font-weight: bolder;
     text-decoration: none;
     text-align: right;
-    
-    
 }
 
 li.nav-item {
-	
-    
     display: flex;
     flex-direction: row;
     width:250px;
     justify-content: space-between;
     margin-right:10%;
-   
-    
-   
-    
 }
 
 
@@ -79,7 +64,6 @@ li.nav-item {
     justify-content: flex-end;
     align-items: center;
     width: 100%;
-    /* background-attachment: fixed; */
 }
 
 .tabla-scroll {
@@ -171,6 +155,4 @@ th {
 
 td {
 	padding: 0 12%;
-	
-    
 }
